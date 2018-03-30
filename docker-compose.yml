@@ -12,6 +12,9 @@ services:
       WORDPRESS_DB_USER: root
       WORDPRESS_DB_NAME: wordpress
       WORDPRESS_DB_PASSWORD: pass
+    working_dir: /var/www/html
+    volumes:
+      - ./wordpress/wp-content/:/var/www/html/wp-content
 
   wordpress_db:
     image: mysql:5.7
