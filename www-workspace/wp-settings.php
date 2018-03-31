@@ -469,3 +469,24 @@ if ( is_multisite() ) {
  * @since 3.0.0
  */
 do_action( 'wp_loaded' );
+
+
+//
+// picture-site specific customisations
+//
+
+# Enables WP cache
+define( 'WP_CACHE', true );
+
+# Redirects non-existing subdomains and subfolders to homepage
+define( 'NOBLOGREDIRECT', 'http://www.yourwebsite.com' );
+
+# Completely disables post revisions
+define( 'WP_POST_REVISIONS', false );
+
+# Disables all automatic updates
+define( 'AUTOMATIC_UPDATER_DISABLED', true );
+
+# Disables the plugin & theme editor PLUS the plugin & theme update
+
+define( 'DISALLOW_FILE_MODS', true );
