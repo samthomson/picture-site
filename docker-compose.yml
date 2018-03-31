@@ -9,7 +9,7 @@ services:
   workspace:
     build:
       context: ./docker-containers/workspace
-    environment:
+    # environment:
       # app stuff
       # - DATABASE_NAME=${DATABASE_NAME}
       # - DB_HOST=${MYSQL_HOST}
@@ -63,12 +63,10 @@ services:
   phpmyadmin:
     build: ./docker-containers/phpmyadmin
     environment:
-      # - PMA_ARBITRARY=1
-      - MYSQL_USER=${PMA_USER}
-      - MYSQL_PASSWORD=${PMA_PASSWORD}
       - MYSQL_ROOT_PASSWORD=${PMA_ROOT_PASSWORD}
+      - PMA_HOST=${MYSQL_HOST}
     ports:
-      - "8080:8080"
+      - "8080:80"
     depends_on:
       - "mysql"
 
