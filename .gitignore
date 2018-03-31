@@ -1,2 +1,3 @@
 .env
 www-workspace/wp-config.php
+www-workspace/wp-content/uploads
