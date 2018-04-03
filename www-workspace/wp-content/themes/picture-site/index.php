@@ -1,15 +1,20 @@
-<html>
-<head><?php wp_head(); ?></head>
-<body>
-<?php
-if ( have_posts() ) {
-    while ( have_posts() ) {
-        the_post();
-        the_title( '<h3>', '</h3>' );
-        the_content();
-    }
-}
-wp_footer();
-?>
-</body>
-</html>
+
+<?php get_header(); ?>
+
+<div class="row">
+
+    <div class="col-sm-8 blog-main">
+
+        <?php 
+			if ( have_posts() ) : while ( have_posts() ) : the_post();
+  	
+				get_template_part( 'content', get_post_format() );
+  
+			endwhile; endif; 
+        ?>
+
+    </div> <!-- /.blog-main -->
+
+</div> <!-- /.row -->
+
+<?php get_footer(); ?>
