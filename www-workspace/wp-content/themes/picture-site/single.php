@@ -4,7 +4,7 @@
 <div class="row">
 
     <div class="col-sm-8 blog-main">
-        <h2>index.php</h2>
+        <h2>single.php</h2>
 
         <?php 
 			if ( have_posts() ) : while ( have_posts() ) : the_post();
