@@ -15,8 +15,7 @@ phpmyadin: http://localhost:8080
 
 ## todo
 
-- gallery post type template
-- gallery page: show list of gallery pages
+- gallery page: list attached pics
 - sitemap
 - nice theme
 - disable unneeded stuff in admin section
