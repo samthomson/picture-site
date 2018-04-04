@@ -28,14 +28,38 @@
     }
     add_action('wp_before_admin_bar_render', 'mytheme_admin_bar_render');
 
+    // remove 'howdy' text
     function replace_howdy($wp_admin_bar) {
       $my_account = $wp_admin_bar->get_node('my-account');
       $wp_admin_bar->add_node([
         'id' => 'my-account',
-        'title' => str_replace( 'Howdy,', '', $my_account->title),
+        'title' => str_replace('Howdy,', '', $my_account->title),
       ]);
     }
-    add_filter( 'admin_bar_menu', 'replace_howdy',25 );
+    add_filter('admin_bar_menu', 'replace_howdy', 25);
+
+    // remove wordpress thank you
+    function remove_thankyou_footer() {
+      add_filter('admin_footer_text', '', 11 );
+    } 
+    add_action('admin_init', 'remove_thankyou_footer');
+
+    // remove dashboard nonsense
+    function remove_dashboard_widgets() {
+      global $wp_meta_boxes;
+   
+      unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
+      unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
+      unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
+      unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
+      unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity']);
+      unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_drafts']);
+      unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);
+      unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
+      unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
+    }
+    add_action('wp_dashboard_setup', 'remove_dashboard_widgets');
+    remove_action('welcome_panel', 'wp_welcome_panel');
 
     //
     // CUSTOMISATIONS
