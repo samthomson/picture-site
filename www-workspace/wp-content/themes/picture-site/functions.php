@@ -21,6 +21,12 @@
         remove_post_type_support('post', 'comments');
         remove_post_type_support('page', 'comments');
     }
+    // Remove comments menu item from admin bar
+    function mytheme_admin_bar_render() {
+      global $wp_admin_bar;
+      $wp_admin_bar->remove_menu('comments');
+    }
+    add_action('wp_before_admin_bar_render', 'mytheme_admin_bar_render');
 
     function replace_howdy($wp_admin_bar) {
       $my_account = $wp_admin_bar->get_node('my-account');
