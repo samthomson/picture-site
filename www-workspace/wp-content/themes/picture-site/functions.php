@@ -61,6 +61,17 @@
     add_action('wp_dashboard_setup', 'remove_dashboard_widgets');
     remove_action('welcome_panel', 'wp_welcome_panel');
 
+    // remove screen options menu tab
+    function remove_screen_options() { return false; }
+    add_filter('screen_options_show_screen', 'remove_screen_options');
+
+    // remove help menu tab
+    add_action('admin_head', 'mytheme_remove_help_tabs');
+    function mytheme_remove_help_tabs() {
+      $screen = get_current_screen();
+      $screen->remove_help_tabs();
+    }
+
     //
     // CUSTOMISATIONS
     //

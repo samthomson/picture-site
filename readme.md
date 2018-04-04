@@ -15,6 +15,5 @@ phpmyadin: http://localhost:8080
 
 - sitemap
 - nice theme
-- disable unneeded stuff in admin section
 - add icon to gallery post type
 - css / js includes
