@@ -1,5 +1,9 @@
 <?php
 
+    //
+    // Disabling wordpress stuff
+    //
+
     // disable top admin bar from showing
     show_admin_bar(false);
     // disable comments and ping
@@ -18,11 +22,28 @@
         remove_post_type_support('page', 'comments');
     }
 
+    function replace_howdy($wp_admin_bar) {
+      $my_account = $wp_admin_bar->get_node('my-account');
+      $wp_admin_bar->add_node([
+        'id' => 'my-account',
+        'title' => str_replace( 'Howdy,', '', $my_account->title),
+      ]);
+    }
+    add_filter( 'admin_bar_menu', 'replace_howdy',25 );
+
+    //
+    // CUSTOMISATIONS
+    //
+
     // set the default permalink structure for pages
     add_action( 'init', function() {
         global $wp_rewrite;
         $wp_rewrite->set_permalink_structure( '/%postname%/' );
     } );
+
+    //
+    // ADDING STUFF
+    //
 
     // create the 'gallery' post type
     function create_post_type() {
