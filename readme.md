@@ -15,7 +15,6 @@ phpmyadin: http://localhost:8080
 
 ## todo
 
-- gallery page: list attached pics
 - sitemap
 - nice theme
 - disable unneeded stuff in admin section
