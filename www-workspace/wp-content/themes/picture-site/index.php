@@ -1,21 +1,18 @@
 
 <?php get_header(); ?>
 
-<div class="row">
+<hr/>
 
-    <div class="col-sm-8 blog-main">
-        <h2>index.php</h2>
+<h2>index.php</h2>
 
-        <?php 
-			if ( have_posts() ) : while ( have_posts() ) : the_post();
-  	
-				get_template_part( 'content', get_post_format() );
-  
-			endwhile; endif; 
-        ?>
+<?php 
+    if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-    </div> <!-- /.blog-main -->
+        get_template_part( 'content', get_post_format() );
 
-</div> <!-- /.row -->
+    endwhile; endif; 
+?>
+
+<hr/>
 
 <?php get_footer(); ?>
