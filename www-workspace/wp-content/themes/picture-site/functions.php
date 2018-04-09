@@ -72,6 +72,9 @@
       $screen->remove_help_tabs();
     }
 
+    // store new db entry for each save
+    define('WP_POST_REVISIONS', false );
+
     //
     // CUSTOMISATIONS
     //
