@@ -100,6 +100,7 @@
           'public' => true,
           'has_archive' => false,
           'rewrite' => array('slug' => 'pictures'),
+          'taxonomies' => array('category'),
         )
       );
     }
