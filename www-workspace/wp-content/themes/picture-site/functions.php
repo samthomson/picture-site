@@ -82,7 +82,7 @@
     // set the default permalink structure for pages
     add_action( 'init', function() {
         global $wp_rewrite;
-        $wp_rewrite->set_permalink_structure( '/%postname%/' );
+        $wp_rewrite->set_permalink_structure('/%category%/%postname%/');
     } );
 
     //
@@ -99,9 +99,27 @@
           ),
           'public' => true,
           'has_archive' => false,
-          'rewrite' => array('slug' => 'pictures'),
-          'taxonomies' => array('category'),
+          'rewrite' => array(
+            'slug' => 'pictures/%category%',
+            'with_front' => true,
+          ),
         )
       );
     }
+
     add_action( 'init', 'create_post_type' );
+
+    function wpa_course_post_link($post_link, $id = 0) {
+      $post = get_post($id);  
+      if (is_object($post)) {
+          $terms = wp_get_object_terms($post->ID, 'category');
+
+          if ($terms) {
+            return str_replace('%category%' , $terms[0]->slug , $post_link);
+          }else{
+            return str_replace('%category%' , 'no-category', $post_link);
+          }
+      }
+      return $post_link;  
+    }
+    add_filter('post_type_link', 'wpa_course_post_link', 1, 3);
