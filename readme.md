@@ -18,7 +18,7 @@ phpmyadin: http://localhost:8080
 - sitemap
 - nice theme
 - add icon to gallery post type
-- css / js includes
+- js includes
 
 ### design
 
