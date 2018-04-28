@@ -13,6 +13,8 @@ phpmyadin: http://localhost:8080
 
 ## todo
 
+- make home and category page work the same
+- left menu / right content layout
 - seed wordpress with credentials via docker-compose and .env file.. no registration/setup page
 - uploads, don’t store in dated folders..
 - sitemap
