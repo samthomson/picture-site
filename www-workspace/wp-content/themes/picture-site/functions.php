@@ -103,6 +103,7 @@
             'slug' => 'pictures/%category%',
             'with_front' => true,
           ),
+          'taxonomies' => array('category'),
         )
       );
     }
