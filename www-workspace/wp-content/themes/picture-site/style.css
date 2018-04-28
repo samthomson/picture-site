@@ -4,3 +4,9 @@ Description: picture-site
 Author: github.com/samthomson
 Version: *
 */
+
+
+.single-image {
+    display: inline-block;
+    margin-right: 8px;
+}
