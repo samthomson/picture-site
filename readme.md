@@ -21,6 +21,7 @@ phpmyadin: http://localhost:8080
 - nice theme
 - add icon to gallery post type
 - js includes
+- page titles
 
 ### design
 
