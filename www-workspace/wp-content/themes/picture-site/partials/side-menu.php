@@ -1,3 +1,8 @@
+<ul>
+    <li><a href="/about">about</a></li>
+</ul>
+
+<ul>
 <?php
 
     $args = array(
@@ -9,7 +14,8 @@
     $loop = new WP_Query($args);
 
     while ($loop->have_posts()) : $loop->the_post();
-        echo '<a href="',the_permalink(),'">', the_title(), '</a>';
-        echo '<br/><br/>';
+        echo '<a href="',the_permalink(),'"><li>', the_title(), '</li></a>';
     endwhile;
-    
+
+?>
+</ul>
