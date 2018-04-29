@@ -13,8 +13,10 @@ phpmyadin: http://localhost:8080
 
 ## todo
 
+- about page with same template
 - category page slug doesn't have parent category
 - highlight active link in nav tree
+- nav tree with categories and indentation
 - seed wordpress with credentials via docker-compose and .env file.. no registration/setup page
 - uploads, don’t store in dated folders..
 - sitemap
