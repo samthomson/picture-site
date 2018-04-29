@@ -13,7 +13,6 @@ phpmyadin: http://localhost:8080
 
 ## todo
 
-- share layout across home / category / gallery page
 - category page slug doesn't have parent category
 - highlight active link in nav tree
 - seed wordpress with credentials via docker-compose and .env file.. no registration/setup page
