@@ -24,6 +24,7 @@ phpmyadin: http://localhost:8080
 - add icon to gallery post type
 - js includes
 - page titles
+- add a snailtrail under the title on gallery pages
 
 ### design
 
