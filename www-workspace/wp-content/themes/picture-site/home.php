@@ -1,25 +1,26 @@
 
 <?php get_header(); ?>
 
-<div class="row">
+<div id="nav-content-row">
 
-    <div class="col-sm-8 blog-main">
+    <div id="nav">
         <?php
             $oCurrentCategory = get_category(get_query_var('cat'));
             $iCategoryId = $oCurrentCategory->cat_ID;
-            echo 'cat id: '.$iCategoryId;
         ?>
 
         <h2>category: <?php echo $oCurrentCategory->name; ?></h2>
 
         <?php get_template_part('partials/side', 'menu'); ?>
 
-        <hr />
+    </div>
+
+    <div id="content">
 
         <?php get_template_part('partials/gallery', 'overview'); ?>
 
-    </div> <!-- /.blog-main -->
+    </div>
 
-</div> <!-- /.row -->
+</div>
 
 <?php get_footer(); ?>

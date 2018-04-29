@@ -5,8 +5,23 @@ Author: github.com/samthomson
 Version: *
 */
 
+#nav-content-row {
+    width: 100%;
+    background-color: red;
+}
 
-.single-image {
+#nav {
+    width: 200px;
+    float: left;
+    background-color: blue;
+}
+
+#content {
+    margin-left: 200px;
+    background-color: green;
+}
+
+.gallery-link, .single-image {
     display: inline-block;
     margin-right: 8px;
 }

@@ -5,9 +5,8 @@
     $loop = new WP_Query($args);
 
     while ($loop->have_posts()) : $loop->the_post();
-        echo '<a href="',the_permalink(),'">';
+        echo '<a href="',the_permalink(),'" class="gallery-link">';
         echo the_post_thumbnail('medium'), '<br/>';
         echo the_title(), '</a>';
-        echo '<br/><br/>';
     endwhile;
     
