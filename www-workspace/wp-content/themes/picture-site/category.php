@@ -12,6 +12,10 @@
 
         <?php set_query_var('iCategoryId', $iCategoryId);get_template_part('partials/side', 'menu'); ?>
 
+        <hr />
+
+        <?php set_query_var('iCategoryId', $iCategoryId);get_template_part('partials/gallery', 'overview'); ?>
+
     </div> <!-- /.blog-main -->
 </div> <!-- /.row -->
 
