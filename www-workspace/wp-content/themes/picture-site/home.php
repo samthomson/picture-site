@@ -14,6 +14,10 @@
 
         <?php get_template_part('partials/side', 'menu'); ?>
 
+        <hr />
+
+        <?php get_template_part('partials/gallery', 'overview'); ?>
+
     </div> <!-- /.blog-main -->
 
 </div> <!-- /.row -->
