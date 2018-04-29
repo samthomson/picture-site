@@ -88,7 +88,9 @@
     //
     // ADDING STUFF
     //
-
+    add_theme_support('post-thumbnails');
+    add_post_type_support( 'ps_gallery', 'thumbnail' );    
+    
     // create the 'gallery' post type
     function create_post_type() {
       register_post_type( 'ps_gallery',
@@ -135,3 +137,4 @@
           echo '<br/><br/>';
       endwhile;
     }
+    
