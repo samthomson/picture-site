@@ -16,7 +16,6 @@
 
 	<ul>
         <li><a href="/">home</a></li>
-        <li><a href="/galleries">galleries</a></li>
         <li><a href="/about">about</a></li>
     </ul>
 	
