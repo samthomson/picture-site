@@ -12,7 +12,7 @@
 
         <h2>category: <?php echo $oCurrentCategory->name; ?></h2>
 
-        <?php displayMenu($iCategoryId); ?>
+        <?php get_template_part('partials/side', 'menu'); ?>
 
     </div> <!-- /.blog-main -->
 
