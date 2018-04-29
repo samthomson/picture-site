@@ -119,9 +119,14 @@
           $terms = wp_get_object_terms($post->ID, 'category');
 
           if ($terms) {
-            return str_replace('%category%' , $terms[0]->slug , $post_link);
+            $saCategories = [];
+            foreach($terms as $oTerm) {
+              array_push($saCategories, $oTerm->slug);
+            }
+            $sCategory = implode('/', $saCategories);
+            return str_replace('%category%', $sCategory, $post_link);
           }else{
-            return str_replace('%category%' , 'no-category', $post_link);
+            return str_replace('%category%', 'no-category', $post_link);
           }
       }
       return $post_link;  
