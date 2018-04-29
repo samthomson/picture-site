@@ -9,6 +9,9 @@
                 if (isset($POST_ID)) {
                     get_template_part('partials/gallery', 'content');
                 } else {
+                    if (isset($sGalleryTitle)) {
+                        echo '<h2>category: ', $sGalleryTitle, '</h2>';
+                    }
                     get_template_part('partials/gallery', 'overview');
                 }
             ?>

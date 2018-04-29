@@ -8,13 +8,11 @@
             $iCategoryId = $oCurrentCategory->cat_ID;
         ?>
 
-        <h2>category: <?php echo $oCurrentCategory->name; ?></h2>
-
-
-    <?php
-        set_query_var('iCategoryId', $iCategoryId);
-        get_template_part('partials/nav', 'content');
-    ?>
+        <?php
+            set_query_var('iCategoryId', $iCategoryId);
+            set_query_var('sGalleryTitle', $oCurrentCategory->name);
+            get_template_part('partials/nav', 'content');
+        ?>
 
     </div> <!-- /.blog-main -->
 </div> <!-- /.row -->
