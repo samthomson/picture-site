@@ -16,6 +16,7 @@ phpmyadin: http://localhost:8080
 - about page with same template
 - category page slug doesn't have parent category
 - highlight active link in nav tree
+- - category page should have full gallery list
 - nav tree with categories and indentation
 - seed wordpress with credentials via docker-compose and .env file.. no registration/setup page
 - uploads, don’t store in dated folders..
