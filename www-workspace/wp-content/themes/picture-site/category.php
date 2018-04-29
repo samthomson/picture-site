@@ -10,11 +10,11 @@
 
         <h2>category: <?php echo $oCurrentCategory->name; ?></h2>
 
-        <?php set_query_var('iCategoryId', $iCategoryId);get_template_part('partials/side', 'menu'); ?>
 
-        <hr />
-
-        <?php set_query_var('iCategoryId', $iCategoryId);get_template_part('partials/gallery', 'overview'); ?>
+    <?php
+        set_query_var('iCategoryId', $iCategoryId);
+        get_template_part('partials/nav', 'content');
+    ?>
 
     </div> <!-- /.blog-main -->
 </div> <!-- /.row -->
