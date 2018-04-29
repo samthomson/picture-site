@@ -1,18 +1,5 @@
 
-<?php get_header(); ?>
-
-<hr/>
-
-<h2>index.php</h2>
-
 <?php 
-    if ( have_posts() ) : while ( have_posts() ) : the_post();
-
-        get_template_part( 'content', get_post_format() );
-
-    endwhile; endif; 
+    set_query_var('bAboutPage', true);
+    get_template_part('partials/nav', 'content');
 ?>
-
-<hr/>
-
-<?php get_footer(); ?>

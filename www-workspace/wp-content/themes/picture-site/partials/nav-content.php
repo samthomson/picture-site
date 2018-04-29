@@ -8,14 +8,19 @@
     <div id="content">
 
         <?php
-            if (isset($POST_ID)) {
-                echo '<h2>', $sGalleryTitle, '</h2>';
-                get_template_part('partials/gallery', 'content');
+
+            if (isset($bAboutPage)) {
+                get_template_part('content/about');
             } else {
-                if (isset($sGalleryTitle)) {
+                if (isset($POST_ID)) {
                     echo '<h2>', $sGalleryTitle, '</h2>';
+                    get_template_part('partials/gallery', 'content');
+                } else {
+                    if (isset($sGalleryTitle)) {
+                        echo '<h2>', $sGalleryTitle, '</h2>';
+                    }
+                    get_template_part('partials/gallery', 'overview');
                 }
-                get_template_part('partials/gallery', 'overview');
             }
         ?>
     </div>
