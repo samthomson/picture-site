@@ -1,6 +1,5 @@
 <?php
 
-    $POST_ID = get_the_ID();
     $THUMB_SIZE = 'medium';
     
     $attachments = get_children([
