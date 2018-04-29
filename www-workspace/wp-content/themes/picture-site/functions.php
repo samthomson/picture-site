@@ -124,3 +124,14 @@
       return $post_link;  
     }
     add_filter('post_type_link', 'wpa_course_post_link', 1, 3);
+
+    function displayMenu($iCategoryId) {
+      $args = array('post_type' => 'ps_gallery', 'posts_per_page' => -1, 'cat' => $iCategoryId);
+
+      $loop = new WP_Query($args);
+
+      while ($loop->have_posts()) : $loop->the_post();
+          echo '<a href="',the_permalink(),'">', the_title(), '</a>';
+          echo '<br/><br/>';
+      endwhile;
+    }
