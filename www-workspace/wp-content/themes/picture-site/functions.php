@@ -97,7 +97,8 @@
         array(
           'labels' => array(
             'name' => __( 'Galleries' ),
-            'singular_name' => __( 'Gallery' )
+            'singular_name' => __( 'Gallery' ),
+            'add_new_item' => 'Add new Gallery'
           ),
           'public' => true,
           'has_archive' => false,
