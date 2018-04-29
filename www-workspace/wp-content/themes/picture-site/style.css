@@ -7,18 +7,15 @@ Version: *
 
 #nav-content-row {
     width: 100%;
-    background-color: red;
 }
 
 #nav {
     width: 200px;
     float: left;
-    background-color: blue;
 }
 
 #content {
     margin-left: 200px;
-    background-color: green;
 }
 
 .gallery-link, .single-image {
