@@ -113,7 +113,7 @@
 
     add_action( 'init', 'create_post_type' );
 
-    function wpa_course_post_link($post_link, $id = 0) {
+    function ps_gallery_link($post_link, $id = 0) {
       $post = get_post($id);  
       if (is_object($post)) {
           $terms = wp_get_object_terms($post->ID, 'category');
@@ -131,5 +131,5 @@
       }
       return $post_link;  
     }
-    add_filter('post_type_link', 'wpa_course_post_link', 1, 3);
+    add_filter('post_type_link', 'ps_gallery_link', 1, 3);
     
