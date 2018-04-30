@@ -13,6 +13,7 @@ phpmyadin: http://localhost:8080
 
 ## todo
 
+- link on category overview page to gallery?
 - category page slug doesn't have parent category
 - highlight active link in nav tree
 - - category page should have full gallery list
