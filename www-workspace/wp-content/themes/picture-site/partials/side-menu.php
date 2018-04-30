@@ -30,7 +30,7 @@
             'type' => 'gallery',
             'id' => $oPost->ID,
             'title' => $oPost->post_title,
-            'name' => $oPost->post_name
+            'slug' => $oPost->post_name
         ];
         array_push($aPostTree[$iCategory], $aPost);
     }
@@ -73,20 +73,27 @@
     // display tree
     displayTree($aTree);
 
-    function displayTree($aTree) {
+    function displayTree($aTree, $aCategorySlugs = []) {
         echo '<ul>';
         foreach($aTree as $aBranch) {
             if ($aBranch['type'] === 'category') {
+                
+                $sUrl = '/category/';
+                if (count($aCategorySlugs) > 0) {
+                    $sUrl .= implode('/', array_filter($aCategorySlugs)) . '/';
+                }
+                $sUrl .= $aBranch['slug'];
                 if (isset($aBranch['children']) && count($aBranch['children']) > 0) {
-                    echo '<li>category: ', $aBranch['name'], '</li>';
+                    echo '<a href="', $sUrl,'"><li>', $aBranch['name'], '</li></a>';
                 }
             }
             if ($aBranch['type'] === 'gallery') {
-                echo '<li>gallery: ', $aBranch['name'], '</li>';
+                $sUrl = '/pictures/' . implode('/', $aCategorySlugs) . '/'. $aBranch['slug'];
+                echo '<a href="', $sUrl,'"><li>', $aBranch['title'], '</li></a>';
             }
 
             if (isset($aBranch['children'])) {
-                displayTree($aBranch['children']);
+                displayTree($aBranch['children'], array_merge($aCategorySlugs, array($aBranch['slug'])));
             }
         }
         echo '</ul>';
