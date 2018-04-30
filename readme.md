@@ -13,7 +13,7 @@ phpmyadin: http://localhost:8080
 
 ## todo
 
-- link on category overview page to gallery?
+- link on category overview page to gallery? make a custom thing here too, with same links as side menu, and same query efficiency.
 - category page slug doesn't have parent category
 - highlight active link in nav tree
 - - category page should have full gallery list

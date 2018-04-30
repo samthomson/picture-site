@@ -1,8 +1,14 @@
 <?php
 
-    $args = array('post_type' => 'ps_gallery', 'posts_per_page' => -1, 'cat' => $iCategoryId);
+    $args = array(
+        'post_type' => 'ps_gallery',
+        'posts_per_page' => -1,
+        'cat' => $iCategoryId
+    );
 
     $loop = new WP_Query($args);
+
+    echo $iCategoryId;
 
     while ($loop->have_posts()) : $loop->the_post();
         echo '<a href="',the_permalink(),'" class="gallery-link">';

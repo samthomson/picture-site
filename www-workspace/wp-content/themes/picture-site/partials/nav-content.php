@@ -6,7 +6,6 @@
         <?php get_template_part('partials/side', 'menu'); ?>
     </div>
     <div id="content">
-
         <?php
             // are we on a 'normal page' - came here from index.php
             if (isset($bFromIndex)) {
@@ -19,6 +18,7 @@
                 }
             } else {
                 if (isset($POST_ID)) {
+                    // category overview
                     echo '<h2>', $sGalleryTitle, '</h2>';
                     get_template_part('partials/gallery', 'content');
                 } else {

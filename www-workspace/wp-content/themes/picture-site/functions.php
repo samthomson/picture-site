@@ -111,9 +111,32 @@
       );
     }
 
-    add_action( 'init', 'create_post_type' );
+    add_action('init', 'create_post_type');
 
     function ps_gallery_link($post_link, $id = 0) {
+
+      /*
+      $sqlCategories = "
+      select wp_term_taxonomy.term_id, wp_term_taxonomy.parent, wp_term_taxonomy.count, wp_terms.name, wp_terms.slug from wp_terms
+      right join wp_term_taxonomy  on wp_term_taxonomy.term_id = wp_terms.term_id
+      where wp_term_taxonomy.taxonomy = 'category'
+      ";
+
+      $aoCategories = $wpdb->get_results($sqlCategories);
+
+      $aCategories = [];
+      foreach ($aoCategories as $oCategory) {
+        array_push($aCategories, [
+          'name' => $oCategory->name,
+          'slug' => $oCategory->slug,
+          'parent' => $oCategory->parent
+        ]);
+      }
+      */
+
+      // return json_encode($aCategories);
+
+
       $post = get_post($id);  
       if (is_object($post)) {
           $terms = wp_get_object_terms($post->ID, 'category');
