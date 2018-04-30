@@ -8,12 +8,15 @@
     <div id="content">
 
         <?php
-
-            // are we on a 'normal page'
-            if ( have_posts() ) {
-                while (have_posts()) : the_post();
-                    get_template_part('content', get_post_format());
-                endwhile;
+            // are we on a 'normal page' - came here from index.php
+            if (isset($bFromIndex)) {
+                if (have_posts()) {
+                    while (have_posts()) : the_post();
+                        get_template_part('content', get_post_format());
+                    endwhile;
+                }else {
+                    echo '<h2>404 - page not found</h2>';
+                }
             } else {
                 if (isset($POST_ID)) {
                     echo '<h2>', $sGalleryTitle, '</h2>';

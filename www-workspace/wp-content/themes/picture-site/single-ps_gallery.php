@@ -1,6 +1,4 @@
 
-
-
 <?php
     set_query_var('sGalleryTitle', get_the_title());
     set_query_var('POST_ID', get_the_ID());
