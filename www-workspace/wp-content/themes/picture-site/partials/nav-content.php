@@ -14,16 +14,16 @@
                         get_template_part('content', get_post_format());
                     endwhile;
                 }else {
-                    echo '<h2>404 - page not found</h2>';
+                    echo '<div class="page-title">404 - page not found</div>';
                 }
             } else {
                 if (isset($POST_ID)) {
                     // category overview
-                    echo '<h2>', $sGalleryTitle, '</h2>';
+                    echo '<div class="page-title">', $sGalleryTitle, '</div>';
                     get_template_part('partials/gallery', 'content');
                 } else {
                     if (isset($sGalleryTitle)) {
-                        echo '<h2>', $sGalleryTitle, '</h2>';
+                        echo '<div class="page-title">', $sGalleryTitle, '</div>';
                     }
                     get_template_part('partials/gallery', 'overview');
                 }

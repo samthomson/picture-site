@@ -1,9 +1,9 @@
-<ul>
-    <?php echo makeLink('/about/', 'about');?>
-</ul>
-
-<?php 
-
+<a href="/" id="home-link">
+    <span>Sam Thomson</span>
+    <span>travel pictures</span>
+</a>
+    
+<?php
     $sqlCategories = "
     select wp_term_taxonomy.term_id, wp_term_taxonomy.parent, wp_term_taxonomy.count, wp_terms.name, wp_terms.slug from wp_terms
     right join wp_term_taxonomy  on wp_term_taxonomy.term_id = wp_terms.term_id
@@ -107,3 +107,8 @@
         return '<a href="'. $sUrl.'" class="'. $sClass .'"><li>'. $sLinkContents. '</li></a>';
     }
 ?>
+
+<hr/>
+<ul>
+    <?php echo makeLink('/about/', 'About');?>
+</ul>

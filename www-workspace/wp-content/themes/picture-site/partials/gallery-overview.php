@@ -83,7 +83,6 @@
     _displayTree($aPostTree);
 
     function _displayTree($aPostBranch) {
-        echo '<ul>';
         foreach($aPostBranch as $aPost) {
             if ($aPost['type'] == 'gallery') {
                 $sUrl = '/pictures/' . implode('/', $aPost['slug']) . '/';
@@ -94,5 +93,4 @@
                 echo 'not a match';
             }
         }
-        echo '</ul>';
     }

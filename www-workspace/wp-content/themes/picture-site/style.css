@@ -10,12 +10,61 @@ Version: *
 }
 
 #nav {
-    width: 200px;
+    width: 300px;
     float: left;
+    margin-left: 0px; /* to offset the menu indentation, without having to set a custom rule for the first ul depth. */
 }
 
 #content {
-    margin-left: 200px;
+    margin-left: 300px;
+    padding-top: 45px;
+}
+
+
+body {
+    background-color: #fff;
+    color: #838181;
+    font-family: 'Open Sans', sans-serif;
+}
+a, a:visited {
+    color: #838181;
+    text-decoration: none;
+}
+a:hover, a:active, a.active {
+    color: #000;
+}
+
+#home-link {
+    font-weight: 700;
+    font-size: 27px;
+}
+#home-link span{
+    display: block;
+    padding-left: 20px;
+}
+
+#nav ul {
+    padding-left: 15px;
+    list-style: none;
+}
+
+#nav ul li{
+    margin-bottom: 8px;
+}
+
+#nav hr{
+    margin-top: 40px;
+    margin-left: 15px;
+    margin-right: 80px;
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.page-title {
+    font-size: 25px;
+    margin-bottom: 20px;
 }
 
 .gallery-link, .single-image {

@@ -10,8 +10,7 @@
 		<title>picture site</title>
 		<link href="<?php echo get_bloginfo( 'template_directory' );?>/style.css" rel="stylesheet">
 		<?php wp_head();?>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	</head>
 
 	<body>
-
-        <h1><a href="/">sams picture site</a></h1>
