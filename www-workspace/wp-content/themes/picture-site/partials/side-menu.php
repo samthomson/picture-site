@@ -1,5 +1,5 @@
 <ul>
-    <li><a href="/about">about</a></li>
+    <?php echo makeLink('/about/', 'about');?>
 </ul>
 
 <?php 
@@ -82,14 +82,16 @@
                 if (count($aCategorySlugs) > 0) {
                     $sUrl .= implode('/', array_filter($aCategorySlugs)) . '/';
                 }
-                $sUrl .= $aBranch['slug'];
+                $sUrl .= $aBranch['slug'] . '/';
                 if (isset($aBranch['children']) && count($aBranch['children']) > 0) {
-                    echo '<a href="', $sUrl,'"><li>', $aBranch['name'], '</li></a>';
+                    $sLinkContents = $aBranch['name'];
+                    echo makeLink($sUrl, $aBranch['name']);
                 }
             }
             if ($aBranch['type'] === 'gallery') {
-                $sUrl = '/pictures/' . implode('/', $aCategorySlugs) . '/'. $aBranch['slug'];
-                echo '<a href="', $sUrl,'"><li>', $aBranch['title'], '</li></a>';
+                $sUrl = '/pictures/' . implode('/', $aCategorySlugs) . '/'. $aBranch['slug'] . '/';
+                $sLinkContents = $aBranch['title'];
+                echo makeLink($sUrl, $aBranch['title']);
             }
 
             if (isset($aBranch['children'])) {
@@ -97,5 +99,11 @@
             }
         }
         echo '</ul>';
+    }
+
+    function makeLink($sUrl, $sLinkContents) {
+        $sCurrentURL = $_SERVER['REQUEST_URI'];
+        $sClass = $sCurrentURL === $sUrl ? 'active' : '';
+        return '<a href="'. $sUrl.'" class="'. $sClass .'"><li>'. $sLinkContents. '</li></a>';
     }
 ?>

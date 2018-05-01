@@ -22,3 +22,7 @@ Version: *
     display: inline-block;
     margin-right: 8px;
 }
+
+a.active {
+    font-weight: bold;
+}

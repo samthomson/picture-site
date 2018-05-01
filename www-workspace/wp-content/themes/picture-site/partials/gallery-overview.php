@@ -86,7 +86,7 @@
         echo '<ul>';
         foreach($aPostBranch as $aPost) {
             if ($aPost['type'] == 'gallery') {
-                $sUrl = '/pictures/' . implode('/', $aPost['slug']);
+                $sUrl = '/pictures/' . implode('/', $aPost['slug']) . '/';
                 echo '<a href="', $sUrl,'" class="gallery-link">';
                 echo '<img src="', wp_get_attachment_image_url($aPost['thumb_id'], 'medium'), '" /><br/>';
                 echo  $aPost['title'], '</a>';
