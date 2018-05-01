@@ -5,16 +5,28 @@
     right join wp_term_taxonomy  on wp_term_taxonomy.term_id = wp_terms.term_id
     where wp_term_taxonomy.taxonomy = 'category'
     ";
+    $aoCategories = $wpdb->get_results($sqlCategories);
+    
 
+    $saCatIDs = [];
+
+    if (isset($iCategoryId)) {
+        // we're on a category page
+        $saCatIDs = catIDs($iCategoryId, $aoCategories);
+        array_push($saCatIDs, $iCategoryId);
+    } else {
+        array_push($saCatIDs, 0);
+        $saCatIDs = catIDs(0, $aoCategories);
+    }
+    
     $sqlPosts = "
     select wp_posts.ID, wp_posts.post_title, wp_posts.post_name, wp_term_relationships.term_taxonomy_id as category, wp_postmeta.meta_value as thumb_id from wp_posts 
     left join wp_term_relationships on wp_posts.ID = wp_term_relationships.object_id
     join wp_postmeta on wp_posts.ID = wp_postmeta.post_id
     where wp_posts.post_type='ps_gallery' and wp_posts.post_status='publish' 
     and wp_postmeta.meta_key='_thumbnail_id'
-    and wp_term_relationships.term_taxonomy_id=". $iCategoryId;
+    and wp_term_relationships.term_taxonomy_id IN (". implode(',', $saCatIDs). ")";
 
-    $aoCategories = $wpdb->get_results($sqlCategories);
     $aoPosts = $wpdb->get_results($sqlPosts);
 
     // iterate through posts
@@ -48,6 +60,24 @@
             }
         }
         return $aInitialSlugs;
+    }
+    function catIDs($iCat, $aoCategories) {
+        $aNewIds = [];
+        foreach($aoCategories as $oCategory) {
+            if ($oCategory->parent == $iCat) {
+                array_push($aNewIds, $oCategory->term_id);
+            
+                // look for children
+                $aNewIds = array_merge(
+                    catIDs(
+                        $oCategory->term_id,
+                        $aoCategories
+                    ),
+                    $aNewIds
+                );
+            }
+        }
+        return $aNewIds;
     }
 
     _displayTree($aPostTree);
