@@ -13,12 +13,13 @@ Version: *
     width: 300px;
     float: left;
     font-size: smaller;
-    margin-left: 0px; /* to offset the menu indentation, without having to set a custom rule for the first ul depth. */
+
+    padding-left: 20px;
 }
 
 #content {
     margin-left: 300px;
-    padding-top: 45px;
+    padding-top: 80px;
 }
 
 #nav a.category {
@@ -44,7 +45,6 @@ a:hover, a:active, a.active {
 }
 #home-link span{
     display: block;
-    padding-left: 20px;
 }
 
 #name {
@@ -56,8 +56,13 @@ a:hover, a:active, a.active {
     text-transform: capitalize;
 }
 
+div#ul-menus{
+    padding-top: 20px;
+    margin-left: -15px; /* to offset the menu indentation, without having to set a custom rule for the first ul depth. */
+}
+
 #nav ul {
-    padding-left: 15px;
+    padding-left: 18px;
     list-style: none;
 }
 

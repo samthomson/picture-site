@@ -21,6 +21,7 @@ phpmyadin: http://localhost:8080
 - js includes
 - page titles
 - add a snailtrail under the title on gallery pages
+- seo stuff
 
 ### design
 
