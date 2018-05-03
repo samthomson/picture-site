@@ -159,3 +159,6 @@
     // custom thumbnail size
     update_option('medium_size_w', 500);
     update_option('medium_size_h', 1600);
+
+    // don't store uploads in nested year/month folders
+    update_option( 'uploads_use_yearmonth_folders', '0' );
