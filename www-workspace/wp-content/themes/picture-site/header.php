@@ -11,6 +11,89 @@
 		<link href="<?php echo get_bloginfo( 'template_directory' );?>/style.css" rel="stylesheet">
 		<?php wp_head();?>
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+		<script
+			src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+			crossorigin="anonymous"
+		></script>
+
+		<script type="text/javascript">
+			let aoImages = []
+			let iCurrentIndex = -1
+
+			function populateLightboxDataStructure() {
+				// look for all images with class 'lightbox-image'
+				$('.lightbox-image').each(function() {
+					// store their source and title
+					aoImages.push({
+						src: this.src,
+						lightSrc: $(this).attr('lightbox-src'),
+						title: this.title
+					})
+				})
+
+				// apply click event
+				$('.lightbox-image').click(function() {
+					const sMediumSrc = $(this).attr('src')
+					for(let cCheckImage = 0; cCheckImage < aoImages.length; cCheckImage++) {
+						if (aoImages[cCheckImage].src === sMediumSrc) {
+							iCurrentIndex = cCheckImage
+							openLightbox(iCurrentIndex)
+						}
+					}
+				})
+
+				// add lightbox nav buttons
+				$('.lightbox-button#close').click(function() {
+					closeLightbox()
+				})
+				$('.lightbox-button#next').click(function() {
+					lightboxNav(true)
+				})
+				$('.lightbox-button#previous').click(function() {
+					lightboxNav(false)
+				})
+			}
+
+			// open lightbox
+			function openLightbox(iImage) {
+				// set src to image
+				updateLightboxSrc()
+				// show element
+				$('#lightbox-container').removeClass('hide').addClass('show')
+			}
+
+			// left/right in lightbox
+			function lightboxNav(bForward) {
+				// get next/prev image and set it as src
+				if (bForward) {
+					iCurrentIndex++
+				} else {
+					iCurrentIndex--
+				}
+				updateLightboxSrc()
+			}
+
+			function updateLightboxSrc() {
+				if (iCurrentIndex < 0) {
+					iCurrentIndex = aoImages.length - 1
+				} 
+				if (iCurrentIndex === aoImages.length) {
+					iCurrentIndex = 0
+				}
+				$('#lightbox-image-container img').attr('src', aoImages[iCurrentIndex].lightSrc)
+			}
+
+			// close lightbox
+			function closeLightbox() {
+				iCurrentIndex = -1
+				// jquery hide element
+				$('#lightbox-container').removeClass('show').addClass('hide')
+			}
+
+			$(document).ready(() => populateLightboxDataStructure())
+		</script>
 	</head>
 
 	<body>

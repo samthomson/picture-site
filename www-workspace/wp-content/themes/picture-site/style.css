@@ -123,8 +123,52 @@ div#ul-menus{
 
 .single-image {
     margin-bottom: 5px;
+    cursor: pointer;
 }
 
 a.active {
     font-weight: bold;
+}
+
+#lightbox-container {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    background: #fff;
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
+#lightbox-image-container {
+    position: absolute;
+    left: 0px;
+    right: 220px;
+    top: 0px;
+    bottom: 0px;
+    padding: 10px;
+}
+#lightbox-image-controls {
+    position: absolute;
+    width: 180px;
+    right: 10px;
+    top: 10px;
+    bottom: 10px;
+
+    padding-left: 20px;
+}
+#lightbox-image-container img {
+    max-height: 100%;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+.lightbox-button {
+    margin-bottom: 10px;
+    cursor: pointer;
 }
