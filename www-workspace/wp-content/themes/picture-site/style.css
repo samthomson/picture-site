@@ -28,6 +28,9 @@ layout
 
 
 .column-layout {
+    max-width: 860px;
+    background: red;
+    display: block;
 }
 
 .single-column {
