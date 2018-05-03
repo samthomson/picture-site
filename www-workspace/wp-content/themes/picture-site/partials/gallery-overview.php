@@ -80,17 +80,29 @@
         return $aNewIds;
     }
 
-    _displayTree($aPostTree);
+    displayColumns($aPostTree);
 
-    function _displayTree($aPostBranch) {
-        foreach($aPostBranch as $aPost) {
-            if ($aPost['type'] == 'gallery') {
-                $sUrl = '/pictures/' . implode('/', $aPost['slug']) . '/';
-                echo '<a href="', $sUrl,'" class="gallery-link">';
-                echo '<img src="', wp_get_attachment_image_url($aPost['thumb_id'], 'medium'), '" /><br/>';
-                echo  $aPost['title'], '</a>';
-            }else{
-                echo 'not a match';
-            }
+    function displayColumns($aCategories) {
+        // split into columns
+        $aaColumns = [[],[],[]];
+        for($cCategory = 0; $cCategory < count($aCategories); $cCategory++) {
+            array_push($aaColumns[$cCategory % 3], $aCategories[$cCategory]);
         }
+
+        echo '<div class="column-layout">';
+        foreach($aaColumns as $aColumn) {
+            echo '<div class="single-column"><div class="column-inlet">';
+            foreach($aColumn as $aCategory) {
+                if ($aCategory['type'] == 'gallery') {
+                    $sUrl = '/pictures/' . implode('/', $aCategory['slug']) . '/';
+                    echo '<a href="', $sUrl,'" class="category-gallery-link">';
+                    echo '<img src="', wp_get_attachment_image_url($aCategory['thumb_id'], 'medium'), '" /><br/>';
+                    echo  $aCategory['title'], '</a>';
+                }else{
+                    echo 'not a match';
+                }
+            }
+            echo '</div></div>';
+        }
+        echo '</div>';
     }

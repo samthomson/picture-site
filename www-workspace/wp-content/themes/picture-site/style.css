@@ -105,13 +105,21 @@ div#ul-menus{
     margin-bottom: 20px;
 }
 
-.gallery-link, .single-image {
+.category-gallery-link, .single-image {
     display: inline-block;
 }
 
-.single-image img {
+.category-gallery-link img, .single-image img {
     max-width: 100%;
     height: auto;
+}
+
+.category-gallery-link {
+    margin-bottom: 20px;
+}
+
+.single-image {
+    margin-bottom: 5px;
 }
 
 a.active {

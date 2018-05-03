@@ -14,7 +14,9 @@ phpmyadin: http://localhost:8080
 ## todo
 
 - seed wordpress with credentials via docker-compose and .env file.. no registration/setup page
-- uploads, don’t store in dated folders..
+- uploads
+- - don’t store in dated folders..
+- - wider medium thumbs
 - sitemap
 - nice theme
 - add icon to gallery post type
