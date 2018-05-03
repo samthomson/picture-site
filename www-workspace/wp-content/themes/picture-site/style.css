@@ -7,19 +7,22 @@ Version: *
 
 #nav-content-row {
     width: 100%;
+    background-color: red;
 }
 
 #nav {
-    width: 300px;
+    width: 280px;
     float: left;
     font-size: smaller;
 
     padding-left: 20px;
+    background-color: orange;
 }
 
 #content {
     margin-left: 300px;
     padding-top: 80px;
+    background-color: yellow;
 }
 
 #nav a.category {
@@ -45,6 +48,7 @@ a:hover, a:active, a.active {
 }
 #home-link span{
     display: block;
+    text-transform: capitalize;
 }
 
 #name {
@@ -52,8 +56,7 @@ a:hover, a:active, a.active {
 }
 #tagline{
     font-weight: 400;
-    font-size: 22px;
-    text-transform: capitalize;
+    font-size: 21px;
 }
 
 div#ul-menus{
