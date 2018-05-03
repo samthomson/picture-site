@@ -1,6 +1,6 @@
 <a href="/" id="home-link">
-    <span>Sam Thomson</span>
-    <span>travel pictures</span>
+    <span id="name">Sam Thomson</span>
+    <span id="tagline">travel pictures</span>
 </a>
     
 <?php
@@ -85,7 +85,7 @@
                 $sUrl .= $aBranch['slug'] . '/';
                 if (isset($aBranch['children']) && count($aBranch['children']) > 0) {
                     $sLinkContents = $aBranch['name'];
-                    echo makeLink($sUrl, $aBranch['name']);
+                    echo makeLink($sUrl, $aBranch['name'], 'category');
                 }
             }
             if ($aBranch['type'] === 'gallery') {
@@ -101,9 +101,9 @@
         echo '</ul>';
     }
 
-    function makeLink($sUrl, $sLinkContents) {
+    function makeLink($sUrl, $sLinkContents, $sClass = '') {
         $sCurrentURL = $_SERVER['REQUEST_URI'];
-        $sClass = $sCurrentURL === $sUrl ? 'active' : '';
+        $sClass .= $sCurrentURL === $sUrl ? ' active' : '';
         return '<a href="'. $sUrl.'" class="'. $sClass .'"><li>'. $sLinkContents. '</li></a>';
     }
 ?>

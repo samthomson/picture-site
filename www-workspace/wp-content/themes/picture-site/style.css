@@ -12,6 +12,7 @@ Version: *
 #nav {
     width: 300px;
     float: left;
+    font-size: smaller;
     margin-left: 0px; /* to offset the menu indentation, without having to set a custom rule for the first ul depth. */
 }
 
@@ -20,11 +21,14 @@ Version: *
     padding-top: 45px;
 }
 
+#nav a.category {
+    font-weight: 800;
+}
 
 body {
     background-color: #fff;
     color: #838181;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto Slab', serif;
 }
 a, a:visited {
     color: #838181;
@@ -35,12 +39,21 @@ a:hover, a:active, a.active {
 }
 
 #home-link {
-    font-weight: 700;
-    font-size: 27px;
+    font-weight: 600;
+    font-size: 22px;
 }
 #home-link span{
     display: block;
     padding-left: 20px;
+}
+
+#name {
+
+}
+#tagline{
+    font-weight: 400;
+    font-size: 22px;
+    text-transform: capitalize;
 }
 
 #nav ul {
