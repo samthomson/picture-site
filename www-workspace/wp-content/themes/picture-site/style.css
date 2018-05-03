@@ -27,6 +27,18 @@ layout
 }
 
 
+.column-layout {
+}
+
+.single-column {
+    float: left;
+    width: 33%;
+}
+.column-inlet {
+    padding-right: 8px;
+}
+
+
 /*
 specific styling
 */
@@ -95,7 +107,11 @@ div#ul-menus{
 
 .gallery-link, .single-image {
     display: inline-block;
-    margin-right: 8px;
+}
+
+.single-image img {
+    max-width: 100%;
+    height: auto;
 }
 
 a.active {
