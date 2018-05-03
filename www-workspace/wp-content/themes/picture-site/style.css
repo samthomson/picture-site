@@ -5,6 +5,10 @@ Author: github.com/samthomson
 Version: *
 */
 
+
+/*
+layout
+*/
 #nav-content-row {
     width: 100%;
     background-color: red;
@@ -25,10 +29,10 @@ Version: *
     background-color: yellow;
 }
 
-#nav a.category {
-    font-weight: 800;
-}
 
+/*
+specific styling
+*/
 body {
     background-color: #fff;
     color: #838181;
@@ -71,6 +75,10 @@ div#ul-menus{
 
 #nav ul li{
     margin-bottom: 8px;
+}
+
+#nav a.category {
+    font-weight: 800;
 }
 
 #nav hr{
