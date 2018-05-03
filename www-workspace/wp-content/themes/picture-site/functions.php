@@ -156,3 +156,6 @@
     }
     add_filter('post_type_link', 'ps_gallery_link', 1, 3);
     
+    // custom thumbnail size
+    update_option('medium_size_w', 500);
+    update_option('medium_size_h', 1600);
