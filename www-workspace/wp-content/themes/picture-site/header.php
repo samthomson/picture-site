@@ -7,7 +7,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 
-		<title>picture site</title>
+		<title><?php echo $sTitle; $sSiteName = get_bloginfo('name'); if ($sSiteName !== '') { echo ' - '.$sSiteName; } ?></title>
 		<link href="<?php echo get_bloginfo( 'template_directory' );?>/style.css" rel="stylesheet">
 		<?php wp_head();?>
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">

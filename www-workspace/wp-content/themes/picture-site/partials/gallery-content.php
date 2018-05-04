@@ -22,11 +22,8 @@
     $i = 0;
     foreach ( $attachments as $id  => $attachment) {
         $aColumns[$i % 3][$attachment->ID] = $attachment;
-        // array_push($aColumns[$id % 3], $attachment);
         $i++;
     }
-
-    // echo json_encode($aColumns);
 
     echo '<div class="column-layout">';
     foreach ($aColumns as $aColumn) {
@@ -44,8 +41,6 @@
         echo '</div></div>';
     }
     echo '</div>';
-
-    // echo $sGalleryHTML;
 
     // lightbox
     ?>

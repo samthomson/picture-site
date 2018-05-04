@@ -1,5 +1,29 @@
 
-<?php get_header(); ?>
+<?php
+    $sTitle = get_bloginfo('name');
+    // are we on a 'normal page' - came here from index.php
+    if (isset($bFromIndex)) {
+        if (have_posts()) {
+            while (have_posts()) : the_post();
+                $sTitle = get_the_title();
+            endwhile;
+        } else {
+            $sTitle = '404 - page not found';
+        }
+    } else {
+        if (isset($POST_ID)) {
+            // category overview
+            $sTitle = $sGalleryTitle;
+        } else {
+            if (isset($sGalleryTitle)) {
+                $sTitle = $sGalleryTitle;
+            }
+        }
+    }
+?>
+
+
+<?php set_query_var('sTitle', $sTitle);get_header(); ?>
 
 <div id="nav-content-row">
     <div id="nav">
@@ -14,16 +38,16 @@
                         get_template_part('content', get_post_format());
                     endwhile;
                 }else {
-                    echo '<div class="page-title">404 - page not found</div>';
+                    echo '<div class="page-title">'.$sTitle.'</div>';
                 }
             } else {
                 if (isset($POST_ID)) {
                     // category overview
-                    echo '<div class="page-title">', $sGalleryTitle, '</div>';
+                    echo '<div class="page-title">', $sTitle, '</div>';
                     get_template_part('partials/gallery', 'content');
                 } else {
                     if (isset($sGalleryTitle)) {
-                        echo '<div class="page-title">', $sGalleryTitle, '</div>';
+                        echo '<div class="page-title">', $sTitle, '</div>';
                     }
                     get_template_part('partials/gallery', 'overview');
                 }

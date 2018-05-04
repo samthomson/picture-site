@@ -15,15 +15,8 @@ phpmyadin: http://localhost:8080
 
 - seed wordpress with credentials via docker-compose and .env file.. no registration/setup page
 - sitemap
-- add icon to gallery post type
 - js includes
 - page titles
 - add a snailtrail under the title on gallery pages
 - seo stuff
-
-### design
-
-- home and category pages should have thumbs from each gallery in content area with gallery name, like https://www.nikkla.com/
-- list of galleries on left, with about page further down, similar to https://www.levonbiss.com/
-- gallery page
-    - columnar layout, image with caption beneath
+- rss
