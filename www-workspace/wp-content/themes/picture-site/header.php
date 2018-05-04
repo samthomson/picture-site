@@ -8,7 +8,7 @@
 		<meta name="author" content="">
 
 		<title><?php echo $sTitle; $sSiteName = get_bloginfo('name'); if ($sSiteName !== '') { echo ' - '.$sSiteName; } ?></title>
-		<link href="<?php echo get_bloginfo( 'template_directory' );?>/style.css" rel="stylesheet">
+		<link href="<?php echo get_bloginfo('template_directory');?>/style.css" rel="stylesheet">
 		<?php wp_head();?>
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 
@@ -94,6 +94,8 @@
 
 			$(document).ready(() => populateLightboxDataStructure())
 		</script>
+
+		<link rel="alternate" type="application/rss+xml" title="Sam Thomson Travel Pictures RSS Feed" href="/feed/rss.xml" />
 	</head>
 
 	<body>

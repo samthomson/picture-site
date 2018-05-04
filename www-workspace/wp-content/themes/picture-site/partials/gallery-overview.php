@@ -44,23 +44,7 @@
         array_push($aPostTree, $aPost);
     }
 
-    function catSlugs($iCat, $aInitialSlugs = [], $aoCategories) {
-        foreach($aoCategories as $oCategory) {
-            if ($oCategory->term_id == $iCat) {
-                array_push($aInitialSlugs, $oCategory->slug);
-            
-                return array_merge(
-                    catSlugs(
-                        $oCategory->parent,
-                        [],
-                        $aoCategories
-                    ),
-                    $aInitialSlugs
-                );
-            }
-        }
-        return $aInitialSlugs;
-    }
+    
     function catIDs($iCat, $aoCategories) {
         $aNewIds = [];
         foreach($aoCategories as $oCategory) {

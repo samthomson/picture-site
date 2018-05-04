@@ -18,4 +18,4 @@ phpmyadin: http://localhost:8080
 - js includes
 - add a snailtrail under the title on gallery pages
 - seo stuff
-- rss
+- analytics

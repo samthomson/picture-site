@@ -162,3 +162,32 @@
 
     // don't store uploads in nested year/month folders
     update_option( 'uploads_use_yearmonth_folders', '0' );
+
+
+    add_action('init', 'customRSS');
+    function customRSS() {
+      add_feed('rss.xml', 'customRSSFunc');
+    }
+
+    function customRSSFunc(){
+      get_template_part('rss');
+    }
+
+    // shared functions
+    function catSlugs($iCat, $aInitialSlugs = [], $aoCategories) {
+      foreach($aoCategories as $oCategory) {
+          if ($oCategory->term_id == $iCat) {
+              array_push($aInitialSlugs, $oCategory->slug);
+          
+              return array_merge(
+                  catSlugs(
+                      $oCategory->parent,
+                      [],
+                      $aoCategories
+                  ),
+                  $aInitialSlugs
+              );
+          }
+      }
+      return $aInitialSlugs;
+    }
