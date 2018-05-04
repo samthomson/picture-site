@@ -16,7 +16,6 @@ phpmyadin: http://localhost:8080
 - seed wordpress with credentials via docker-compose and .env file.. no registration/setup page
 - sitemap
 - js includes
-- page titles
 - add a snailtrail under the title on gallery pages
 - seo stuff
 - rss
