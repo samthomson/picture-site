@@ -167,6 +167,7 @@ a.active {
     max-width: 100%;
     height: auto;
     margin: 0 auto;
+    display: block;
 }
 .lightbox-button {
     margin-bottom: 10px;
