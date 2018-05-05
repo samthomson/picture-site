@@ -96,10 +96,13 @@ div#ul-menus{
     font-weight: 800;
 }
 
-#nav hr{
+#nav hr {
     margin-top: 40px;
     margin-left: 15px;
     margin-right: 80px;
+}
+
+hr {
     border: 0;
     height: 0;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -178,4 +181,8 @@ a.active {
 .lightbox-button {
     margin-bottom: 10px;
     cursor: pointer;
+}
+#lightbox-image-controls #caption {
+    position: relative;
+    margin-top: 60px;
 }

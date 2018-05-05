@@ -29,7 +29,7 @@
     foreach ($aColumns as $aColumn) {
         echo '<div class="single-column"><div class="column-inlet">';
         foreach ($aColumn as $id  => $attachment) {
-            $title = esc_html($attachment->post_title, 1);
+            $title = esc_html($attachment->post_excerpt, 1);
             $img = wp_get_attachment_image_src($id, $THUMB_SIZE);
             $sLightboxImageSrc = esc_url(wp_get_attachment_image_src($id, 'large')[0]);
 
@@ -50,6 +50,7 @@
             <div class="lightbox-button" id="close">close</div>
             <div class="lightbox-button" id="previous">previous</div>
             <div class="lightbox-button" id="next">next</div>
+            <div id="caption"></div>
         </div>
     </div>
     <?php

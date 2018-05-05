@@ -83,6 +83,12 @@
 					iCurrentIndex = 0
 				}
 				$('#lightbox-image-container img').attr('src', aoImages[iCurrentIndex].lightSrc)
+				
+				let sContent = '';
+				if(aoImages[iCurrentIndex].title !== '') {
+					sContent = '<hr/>' + aoImages[iCurrentIndex].title
+				}
+				$('#lightbox-image-controls #caption').html(sContent)
 			}
 
 			// close lightbox
