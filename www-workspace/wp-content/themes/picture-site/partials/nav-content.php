@@ -1,6 +1,7 @@
 
 <?php
     $sTitle = get_bloginfo('name');
+    $sClass = '';
     // are we on a 'normal page' - came here from index.php
     if (isset($bFromIndex)) {
         if (have_posts()) {
@@ -12,10 +13,13 @@
         }
     } else {
         if (isset($POST_ID)) {
-            // category overview
+            // gallery page
             $sTitle = $sGalleryTitle;
+            $sClass = 'gallery-page';
         } else {
+            $sClass = 'category-page';
             if (isset($sGalleryTitle)) {
+                // category overview
                 $sTitle = $sGalleryTitle;
             }
         }
@@ -29,7 +33,7 @@
     <div id="nav">
         <?php get_template_part('partials/side', 'menu'); ?>
     </div>
-    <div id="content">
+    <div id="content" class="<?php echo $sClass; ?>">
         <?php
             // are we on a 'normal page' - came here from index.php
             if (isset($bFromIndex)) {

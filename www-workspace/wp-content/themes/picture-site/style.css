@@ -37,8 +37,11 @@ layout
     float: left;
     width: 33%;
 }
-.column-inlet {
+.gallery-page .column-inlet {
     padding-right: 8px;
+}
+.category-page .column-inlet {
+    padding-right: 18px;
 }
 
 
@@ -119,6 +122,9 @@ div#ul-menus{
 
 .category-gallery-link {
     margin-bottom: 20px;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
 }
 
 .single-image {
