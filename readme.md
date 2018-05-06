@@ -19,3 +19,4 @@ phpmyadin: http://localhost:8080
 - add a snailtrail under the title on gallery pages
 - seo stuff
 - analytics
+- lightbox keyboard shortcuts - esc left right
