@@ -20,3 +20,5 @@ phpmyadin: http://localhost:8080
 - seo stuff
 - analytics
 - lightbox keyboard shortcuts - esc left right
+- watermark images
+- get date and exif info
