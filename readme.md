@@ -11,7 +11,7 @@ copy `.env.sample` to `.env` and add desired values.
 website: http://localhost:80
 phpmyadin: http://localhost:8080
 
-## todo
+## to-do
 
 - seed wordpress with credentials via docker-compose and .env file.. no registration/setup page
 - sitemap
