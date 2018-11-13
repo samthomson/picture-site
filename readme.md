@@ -8,8 +8,11 @@ copy `.env.sample` to `.env` and add desired values.
 
 `docker-compose up`
 
+visit http://localhost/wp-admin/install.php to complete the installation of wordpress (seeding db tables)
+
 website: http://localhost:80
-phpmyadin: http://localhost:8080
+phpmyadin: http://localhost:8080 (user: root, password: [from .env])
+
 
 ## to-do
 
