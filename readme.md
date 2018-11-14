@@ -22,6 +22,11 @@ website: http://localhost:80
 phpmyadin: http://localhost:8080 (user: root, password: [from .env])
 
 
+### Optional
+
+If you want to include custom js on each page, then duplicate and rename */www-workspace/wp-content/themes/picture-site/partials/custom-scripts-sample.php* to *custom-scripts.php*, then add scripts into that file which is added to every page before the closing body tag.
+
+
 ## to-do
 
 - seed wordpress with credentials via docker-compose and .env file.. no registration/setup page
