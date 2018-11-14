@@ -1,3 +1,4 @@
 .env
 www-workspace/wp-config.php
 www-workspace/wp-content/uploads
+www-workspace/wp-content/themes/picture-site/partials/custom-scripts-sample.php
