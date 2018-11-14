@@ -13,7 +13,7 @@
     add_action( 'admin_init', 'my_remove_admin_menus' );
     function my_remove_admin_menus() {
       remove_menu_page('edit-comments.php');
-      remove_menu_page('plugins.php');
+      // remove_menu_page('plugins.php');
     }
     // Remove comments from post and pages
     add_action('init', 'remove_comment_support', 100);
