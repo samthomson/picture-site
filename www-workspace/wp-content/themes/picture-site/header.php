@@ -76,24 +76,40 @@
 				updateLightboxSrc()
 			}
 
+			function iIndexWithinBounds(iIndex) {
+				if (iIndex < 0) {
+					iIndex = aoImages.length - 1
+				} 
+				if (iIndex === aoImages.length) {
+					iIndex = 0
+				}
+				return iIndex
+			}
+
 			function updateLightboxSrc() {
 				// show loading indicator
-				$('#lightbox-image-container img').attr('src', sLoadingGifUri)
+				$('#lightbox-image-container img').attr('src', sLoadingGifUri);
 				
 				// set correct url for image
-				if (iCurrentIndex < 0) {
-					iCurrentIndex = aoImages.length - 1
-				} 
-				if (iCurrentIndex === aoImages.length) {
-					iCurrentIndex = 0
-				}
-				$('#lightbox-image-container img').attr('src', aoImages[iCurrentIndex].lightSrc)
+				iCurrentIndex = iIndexWithinBounds(iCurrentIndex);
+				$('#lightbox-image-container img').attr('src', aoImages[iCurrentIndex].lightSrc);
 				
 				let sContent = '';
 				if(aoImages[iCurrentIndex].title !== '') {
-					sContent = '<hr/>' + aoImages[iCurrentIndex].title
+					sContent = '<hr/>' + aoImages[iCurrentIndex].title;
 				}
-				$('#lightbox-image-controls #caption').html(sContent)
+				$('#lightbox-image-controls #caption').html(sContent);
+
+				// preload neighbors
+				let iPrevious = iCurrentIndex - 1;
+				let iNext = iCurrentIndex + 1;
+				preloadImage(iPrevious);
+				preloadImage(iNext);
+			}
+
+			function preloadImage(iIndexToPreload) {
+				iIndexToPreload = iIndexWithinBounds(iIndexToPreload);
+				(new Image()).src = aoImages[iIndexToPreload];
 			}
 
 			// close lightbox
