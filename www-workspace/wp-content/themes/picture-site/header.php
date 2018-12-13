@@ -19,9 +19,9 @@
 		></script>
 
 		<script type="text/javascript">
-			let aoImages = []
-			let iCurrentIndex = -1
-			let sLoadingGifUri = '<?php echo get_template_directory_uri(); ?>/images/ajax-loader.gif'
+			let aoImages = [];
+			let iCurrentIndex = -1;
+			let sLoadingGifUri = '<?php echo get_template_directory_uri(); ?>/images/ajax-loader.gif';
 
 			function populateLightboxDataStructure() {
 				// look for all images with class 'lightbox-image'
@@ -32,7 +32,7 @@
 						lightSrc: $(this).attr('lightbox-src'),
 						title: this.title
 					})
-				})
+				});
 
 				// apply click event
 				$('.lightbox-image').click(function() {
@@ -88,11 +88,11 @@
 
 			function updateLightboxSrc() {
 				// show loading indicator
-				$('#lightbox-image-container img').attr('src', sLoadingGifUri);
+				$('#lightbox-image-container img#lightbox-src-image').attr('src', '');
 				
 				// set correct url for image
 				iCurrentIndex = iIndexWithinBounds(iCurrentIndex);
-				$('#lightbox-image-container img').attr('src', aoImages[iCurrentIndex].lightSrc);
+				$('#lightbox-image-container img#lightbox-src-image').attr('src', aoImages[iCurrentIndex].lightSrc);
 				
 				let sContent = '';
 				if(aoImages[iCurrentIndex].title !== '') {
@@ -109,7 +109,7 @@
 
 			function preloadImage(iIndexToPreload) {
 				iIndexToPreload = iIndexWithinBounds(iIndexToPreload);
-				(new Image()).src = aoImages[iIndexToPreload];
+				(new Image()).src = aoImages[iIndexToPreload].lightSrc;
 			}
 
 			// close lightbox
