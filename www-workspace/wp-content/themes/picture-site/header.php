@@ -21,6 +21,7 @@
 		<script type="text/javascript">
 			let aoImages = []
 			let iCurrentIndex = -1
+			let sLoadingGifUri = '<?php echo get_template_directory_uri(); ?>/images/ajax-loader.gif'
 
 			function populateLightboxDataStructure() {
 				// look for all images with class 'lightbox-image'
@@ -76,6 +77,10 @@
 			}
 
 			function updateLightboxSrc() {
+				// show loading indicator
+				$('#lightbox-image-container img').attr('src', sLoadingGifUri)
+				
+				// set correct url for image
 				if (iCurrentIndex < 0) {
 					iCurrentIndex = aoImages.length - 1
 				} 
