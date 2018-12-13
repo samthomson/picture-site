@@ -93,6 +93,9 @@
 				// set correct url for image
 				iCurrentIndex = iIndexWithinBounds(iCurrentIndex);
 				$('#lightbox-image-container img#lightbox-src-image').attr('src', aoImages[iCurrentIndex].lightSrc);
+
+				// track event
+				lightboxImageViewEvent(iCurrentIndex);
 				
 				let sContent = '';
 				if(aoImages[iCurrentIndex].title !== '') {

@@ -189,7 +189,7 @@ a.active {
 #lightbox-loading-image{
     z-index: 100;
     position: absolute;
-    top: 30%;
+    top: 10%;
     left: 45%;
 }
 #lightbox-src-image{
