@@ -9,8 +9,9 @@ Version: *
 layout
 */
 
-#nav-content-row {
+.row {
   width: 100%;
+  overflow: auto;
 }
 
 #nav {
@@ -23,7 +24,7 @@ layout
 
 #content {
   margin-left: 300px;
-  padding-top: 80px;
+  padding-top: 8px;
 }
 
 .column-layout {
@@ -193,5 +194,21 @@ a.active {
 @media only screen and (max-width: 767px) {
   .single-column {
     width: 100%;
+  }
+
+  .nav-content #nav {
+    /* collapse */
+    width: 0px;
+    display: none;
+  }
+
+  .nav-content #content {
+    /* full width */
+    margin-left: 10px;
+  }
+
+  #home-link span {
+    display: inline-block;
+    font-size: 30px;
   }
 }
