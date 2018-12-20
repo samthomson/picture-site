@@ -44,6 +44,10 @@ layout
   padding-right: 18px;
 }
 
+#footer-about-link {
+  display: none;
+}
+
 /*
 specific styling
 */
@@ -210,5 +214,15 @@ a.active {
   #home-link span {
     display: inline-block;
     font-size: 30px;
+  }
+
+  #footer-about-link {
+    display: block;
+    padding-top: 16px;
+    width: auto;
+    border-top: silver 1px solid;
+    text-decoration: underline;
+    text-align: center;
+    margin: 8px 80px 8px 80px;
   }
 }
