@@ -5,184 +5,224 @@ Author: github.com/samthomson
 Version: *
 */
 
-
 /*
 layout
 */
-#nav-content-row {
-    width: 100%;
+
+.row {
+  width: 100%;
+  overflow: auto;
 }
 
 #nav {
-    width: 280px;
-    float: left;
-    font-size: smaller;
+  width: 280px;
+  float: left;
+  font-size: smaller;
 
-    padding-left: 20px;
+  padding-left: 20px;
 }
 
 #content {
-    margin-left: 300px;
-    padding-top: 80px;
+  margin-left: 300px;
+  padding-top: 8px;
 }
 
-
 .column-layout {
-    max-width: 860px;
-    background: red;
-    display: block;
+  max-width: 860px;
+  background: red;
+  display: block;
 }
 
 .single-column {
-    float: left;
-    width: 33%;
+  float: left;
+  width: 33%;
 }
 .gallery-page .column-inlet {
-    padding-right: 8px;
+  padding-right: 8px;
 }
 .category-page .column-inlet {
-    padding-right: 18px;
+  padding-right: 18px;
 }
 
+#footer-about-link {
+  display: none;
+}
 
 /*
 specific styling
 */
 body {
-    background-color: #fff;
-    color: #838181;
-    font-family: 'Roboto Slab', serif;
+  background-color: #fff;
+  color: #838181;
+  font-family: "Roboto Slab", serif;
 }
-a, a:visited {
-    color: #838181;
-    text-decoration: none;
+a,
+a:visited {
+  color: #838181;
+  text-decoration: none;
 }
-a:hover, a:active, a.active {
-    color: #000;
+a:hover,
+a:active,
+a.active {
+  color: #000;
 }
 
 #home-link {
-    font-weight: 600;
-    font-size: 22px;
+  font-weight: 600;
+  font-size: 22px;
 }
-#home-link span{
-    display: block;
-    text-transform: capitalize;
+#home-link span {
+  display: block;
+  text-transform: capitalize;
 }
 
 #name {
-
 }
-#tagline{
-    font-weight: 400;
-    font-size: 21px;
+#tagline {
+  font-weight: 400;
+  font-size: 21px;
 }
 
-div#ul-menus{
-    padding-top: 20px;
-    margin-left: -15px; /* to offset the menu indentation, without having to set a custom rule for the first ul depth. */
+div#ul-menus {
+  padding-top: 20px;
+  margin-left: -15px; /* to offset the menu indentation, without having to set a custom rule for the first ul depth. */
 }
 
 #nav ul {
-    padding-left: 18px;
-    list-style: none;
+  padding-left: 18px;
+  list-style: none;
 }
 
-#nav ul li{
-    margin-bottom: 8px;
+#nav ul li {
+  margin-bottom: 8px;
 }
 
 #nav a.category {
-    font-weight: 800;
+  font-weight: 800;
 }
 
 #nav hr {
-    margin-top: 40px;
-    margin-left: 15px;
-    margin-right: 80px;
+  margin-top: 40px;
+  margin-left: 15px;
+  margin-right: 80px;
 }
 
 hr {
-    border: 0;
-    height: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .page-title {
-    font-size: 25px;
-    margin-bottom: 20px;
+  font-size: 25px;
+  margin-bottom: 20px;
 }
 
-.category-gallery-link, .single-image {
-    display: inline-block;
+.category-gallery-link,
+.single-image {
+  display: inline-block;
 }
 
-.category-gallery-link img, .single-image img {
-    max-width: 100%;
-    height: auto;
+.category-gallery-link img,
+.single-image img {
+  max-width: 100%;
+  height: auto;
 }
 
 .category-gallery-link {
-    margin-bottom: 20px;
-    font-size: large;
-    font-weight: bold;
-    text-align: center;
+  margin-bottom: 20px;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
 }
 
 .single-image {
-    margin-bottom: 5px;
-    cursor: pointer;
+  margin-bottom: 5px;
+  cursor: pointer;
 }
 
 a.active {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 #lightbox-container {
-    position: fixed;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    bottom: 0px;
-    background: #fff;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background: #fff;
 }
-.show{
-    display: block;
+.show {
+  display: block;
 }
-.hide{
-    display: none;
+.hide {
+  display: none;
 }
 #lightbox-image-container {
-    position: absolute;
-    left: 0px;
-    right: 220px;
-    top: 0px;
-    bottom: 0px;
-    padding: 10px;
+  position: absolute;
+  left: 0px;
+  right: 220px;
+  top: 0px;
+  bottom: 0px;
+  padding: 10px;
 }
 #lightbox-image-controls {
-    position: absolute;
-    width: 180px;
-    right: 10px;
-    top: 10px;
-    bottom: 10px;
+  position: absolute;
+  width: 180px;
+  right: 10px;
+  top: 10px;
+  bottom: 10px;
 
-    padding-left: 20px;
+  padding-left: 20px;
 }
 #lightbox-image-container img {
-    max-height: 100%;
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-    display: block;
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
 }
 .lightbox-button {
-    margin-bottom: 10px;
-    cursor: pointer;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 #lightbox-image-controls #caption {
-    position: relative;
-    margin-top: 60px;
+  position: relative;
+  margin-top: 60px;
+}
+
+/* mobile overrides*/
+@media only screen and (max-width: 767px) {
+  .single-column {
+    width: 100%;
+  }
+
+  .nav-content #nav {
+    /* collapse */
+    width: 0px;
+    display: none;
+  }
+
+  .nav-content #content {
+    /* full width */
+    margin-left: 10px;
+  }
+
+  #home-link span {
+    display: inline-block;
+    font-size: 30px;
+  }
+
+  #footer-about-link {
+    display: block;
+    padding-top: 16px;
+    width: auto;
+    border-top: silver 1px solid;
+    text-decoration: underline;
+    text-align: center;
+    margin: 8px 80px 8px 80px;
+  }
 }

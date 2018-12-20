@@ -1,8 +1,3 @@
-<a href="/" id="home-link">
-    <span id="name">Sam Thomson</span>
-    <span id="tagline">travel pictures</span>
-</a>
-    
 <div id="ul-menus">
     <?php
         $sqlCategories = "
