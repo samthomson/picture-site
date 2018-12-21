@@ -29,7 +29,13 @@
 
 <?php set_query_var('sTitle', $sTitle);get_header(); ?>
 
-<div id="nav-content-row">
+<div class="row">
+    <a href="/" id="home-link">
+        <span id="name">Sam Thomson</span>
+        <span id="tagline">travel pictures</span>
+    </a> 
+</div>
+<div class="row nav-content">
     <div id="nav">
         <?php get_template_part('partials/side', 'menu'); ?>
     </div>
