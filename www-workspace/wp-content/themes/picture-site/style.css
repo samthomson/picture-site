@@ -193,6 +193,16 @@ a.active {
   position: relative;
   margin-top: 60px;
 }
+#lightbox-loading-image{
+    z-index: 100;
+    position: absolute;
+    top: 10%;
+    left: 45%;
+}
+#lightbox-src-image{
+    z-index: 101;
+    position: relative;
+}
 
 /* mobile overrides*/
 @media only screen and (max-width: 767px) {

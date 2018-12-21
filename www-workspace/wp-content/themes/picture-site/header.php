@@ -19,8 +19,9 @@
 		></script>
 
 		<script type="text/javascript">
-			let aoImages = []
-			let iCurrentIndex = -1
+			let aoImages = [];
+			let iCurrentIndex = -1;
+			let sLoadingGifUri = '<?php echo get_template_directory_uri(); ?>/images/ajax-loader.gif';
 
 			function populateLightboxDataStructure() {
 				// look for all images with class 'lightbox-image'
@@ -31,7 +32,7 @@
 						lightSrc: $(this).attr('lightbox-src'),
 						title: this.title
 					})
-				})
+				});
 
 				// apply click event
 				$('.lightbox-image').click(function() {
@@ -75,20 +76,43 @@
 				updateLightboxSrc()
 			}
 
-			function updateLightboxSrc() {
-				if (iCurrentIndex < 0) {
-					iCurrentIndex = aoImages.length - 1
+			function iIndexWithinBounds(iIndex) {
+				if (iIndex < 0) {
+					iIndex = aoImages.length - 1
 				} 
-				if (iCurrentIndex === aoImages.length) {
-					iCurrentIndex = 0
+				if (iIndex === aoImages.length) {
+					iIndex = 0
 				}
-				$('#lightbox-image-container img').attr('src', aoImages[iCurrentIndex].lightSrc)
+				return iIndex
+			}
+
+			function updateLightboxSrc() {
+				// show loading indicator
+				$('#lightbox-image-container img#lightbox-src-image').attr('src', '');
+				
+				// set correct url for image
+				iCurrentIndex = iIndexWithinBounds(iCurrentIndex);
+				$('#lightbox-image-container img#lightbox-src-image').attr('src', aoImages[iCurrentIndex].lightSrc);
+
+				// track event
+				lightboxImageViewEvent(iCurrentIndex);
 				
 				let sContent = '';
 				if(aoImages[iCurrentIndex].title !== '') {
-					sContent = '<hr/>' + aoImages[iCurrentIndex].title
+					sContent = '<hr/>' + aoImages[iCurrentIndex].title;
 				}
-				$('#lightbox-image-controls #caption').html(sContent)
+				$('#lightbox-image-controls #caption').html(sContent);
+
+				// preload neighbors
+				let iPrevious = iCurrentIndex - 1;
+				let iNext = iCurrentIndex + 1;
+				preloadImage(iPrevious);
+				preloadImage(iNext);
+			}
+
+			function preloadImage(iIndexToPreload) {
+				iIndexToPreload = iIndexWithinBounds(iIndexToPreload);
+				(new Image()).src = aoImages[iIndexToPreload].lightSrc;
 			}
 
 			// close lightbox

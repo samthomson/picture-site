@@ -45,7 +45,7 @@
     // lightbox
     ?>
     <div id="lightbox-container" class="hide">
-        <div id="lightbox-image-container"><img /></div>
+        <div id="lightbox-image-container"><img id="lightbox-loading-image" src="<?php echo get_template_directory_uri(); ?>/images/ajax-loader.gif" /><img id="lightbox-src-image" /></div>
         <div id="lightbox-image-controls">
             <div class="lightbox-button" id="close">close</div>
             <div class="lightbox-button" id="previous">previous</div>
